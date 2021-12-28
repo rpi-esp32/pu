@@ -40,8 +40,8 @@ char contentTypes[][2][32] = {
 #define password2   "girlcat1"
 #define ssid3       "the chu home"
 #define password3   "14141414"
-#define ssid      "esp32"
 
+// #define ssid      "esp32"
 // #define password  "girlcat1"
 // #define password   "girlcat1"
 
@@ -241,6 +241,7 @@ void setup() {
   // Connect to WiFi
   Serial.println("Setting up WiFi");
   // WiFi.begin(WIFI_SSID, WIFI_PASS);
+  Serial.println("WIFI-MULTI");
   wifiMulti.addAP (ssid1, password1);
   wifiMulti.addAP (ssid2, password2);
   wifiMulti.addAP (ssid3, password3);
