@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title> title must not be empty </title>
+    </head>
+    <body>
+
+    <nav>
+        <div  id="select">
+            <input type="radio" id="page1" name="page" value="TouchPad" checked class="select">
+            <label for="page1" class="selectLabel">TouchPad</label>
+            <input type="radio" id="page2" name="page" value="Direction" class="select">
+            <label for="page2" class="selectLabel">Direction</label>
+            <input type="radio" id="page3" name="page" value="Destination" class="select">
+            <label for="page1" class="selectLabel">Destination</label>
+            <input type="radio" id="page4" name="page" value="WayPoints" class="select">
+            <label for="page4" class="selectLabel">WayPoints</label>
+            <input type="radio" id="page5" name="page" value="PID" class="select">
+            <label for="page5" class="selectLabel">PID</label>
+            <input type="radio" id="page6" name="page" value="Display" class="select">
+            <label for="page6" class="selectLabel">Display</label>
+        </div>
+    </nav>    
+
+
+    <section id="TouchPad">
+        <h1 > Websocket to ESP32 </h1>
+        <!-- <button type="button" id="btn" > PRESS ME to test</button> <div></div>    -->
+        <canvas id="myCanvas" width="400 px" height="300" style="border:2px solid #000000;" >
+        </canvas>
+        <p id="x" ></p><p id="y"></p><p id="d"></p><p id = "message1"></p>
+    </section>
+
+    <section id="PID">
+        <h1> Configure PID controller</h1>
+        <label for="ms"> interval (ms) per sample  (default 100 millisecond):  </label>   
+        <span id="value-ms" class="span"></span>
+        <input type="range" id="ms" name="ms" min="100" max="1000" value = "100" class="slide">
+        <label for="kP"> kP (between -100 and 100):  </label>
+        <span id="value-kP" class="span"></span>
+        <input type="range" id="kP" name="kP" min="-100" max="100" value = "0" class="slide" >
+        <label for="kI"> kI (between -100 and 100):         </label>
+        <span id="value-kI" class="span"></span>
+        <input type="range" id="kI" name="kI" min="-100" max="100" value = "0" class="slide" >  
+        <label for="kD"> kD (between -100 and 100):         </label>
+        <span id="value-kD" class="span"></span>
+        <input type="range" id="kD" name="kD" min="-100" max="100" value = "0" class="slide"  >
+        <label for="directon"> Direction (between -180 and 180):   </label>   
+        <span id="value-direction" class="span"></span> 
+        <input type="range" id="direction" name="direction" min="-180" max="180" value = "0" class="slide" >
+        <label for="speed"> Speed (between 0 and 100):         </label>
+        <span id="value-speed" class="span"></span>
+        <input type="range" id="speed" name="speed" min="0" max="100" value = "0" class="slide" >
+        <label for="update"> Update (push):         </label>
+        <input type="button" id="button" name="button" value="push to update" class="slide" >
+        <p id="message2"></p>
+    </section>
+    <section id="Direction">
+        <h1> AutoPilot (Direction) </h1>
+        <canvas id="myCanvas2" width="400 px" height="300" style="border:2px solid #000000;" >
+        </canvas>
+        <p id="x2" ></p><p id="y2"></p><p id="d2"></p><p id = "message12"></p>
+    </section>
+    <section id="Destination">
+        <h1> AutoPilot (Destination) </h1>
+    </section>
+    <section id="WayPoints">
+        <h1> AutoPilot (WayPoints) </h1>
+        <p id="map2"></p>
+        <a id="map" href="">this is a link</a>
+        <iframe id="map1" src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials">
+        </iframe>
+    </section>
+    <section id="Display">
+        <h1> Display </h1>
+        <button onclick="requestOrientationPermission();">Request orientation permission</button>
+        <p id="or">HELLO </p>
+        <p id="or2"></p>
+    </section>
+        <style>
+            .slide {display: block; width: 400px;}
+            /* .select {} */
+            /* .selectLabel {display: block} */
+            .span {color: rgb(241, 16, 16); font-weight: bold;}
+        </style>
+        <script src="main.js" type = "text/javascript"></script>
+
+    </body>
+</html>
