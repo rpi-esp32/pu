@@ -8,8 +8,14 @@
 #include "private_key.h"
 #include <WiFi.h>
 
+// #include <SPI.h>
+// #include <LoRa.h>
+
+
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
+
+
 
 #include <SPIFFS.h>
 #include <FS.h>
@@ -40,6 +46,8 @@ char contentTypes[][2][32] = {
 #define password2   "girlcat1"
 #define ssid3       "the chu home"
 #define password3   "14141414"
+#define ssid4       "iphonexs"
+#define password4   "bbbbbbbb"
 
 // #define ssid      "esp32"
 // #define password  "girlcat1"
@@ -245,6 +253,7 @@ void setup() {
   wifiMulti.addAP (ssid1, password1);
   wifiMulti.addAP (ssid2, password2);
   wifiMulti.addAP (ssid3, password3);
+  wifiMulti.addAP (ssid4, password4);
   wifiMulti.run();
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
