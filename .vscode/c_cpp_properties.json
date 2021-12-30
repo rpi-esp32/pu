@@ -12,6 +12,17 @@
         },
 
         {
+            "name": "Happy Valley ",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/Users/maurice/.platformio/packages/framework-arduinoespressif32/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [],
+            "intelliSenseMode": "macos-gcc-x64"
+        },
+
+        {
             "name": "Crawford",
             "includePath": [
                 "${workspaceFolder}/**",
