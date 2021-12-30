@@ -114,7 +114,7 @@ void handle404(HTTPRequest * req, HTTPResponse * res) {
   res->println("<!DOCTYPE html>");
   res->println("<html>");
   res->println("<head><title>Not Found</title></head>");
-  res->println("<body><h1>404 Not Found</h1><p>The requested resource was not found on this server.</p></body>");
+  res->println("<body><h1>Esp32 - 404 Not Found</h1><p>(from esp) The requested resource was not found on this server.</p></body>");
   res->println("</html>");
 }
 
@@ -195,7 +195,7 @@ void handleSPIFFS(HTTPRequest * req, HTTPResponse * res) {
       // Send "404 Not Found" as response, as the file doesn't seem to exist
       res->setStatusCode(404);
       res->setStatusText("Not found");
-      res->println("404 Not Found");
+      res->println("(from SPIFFS handler) - 404 Not Found");
       return;
     }
 
